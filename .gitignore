@@ -2,4 +2,4 @@
 .env
 
 # But don't ignore example environment variables file
-!.env example
+!.env.example
