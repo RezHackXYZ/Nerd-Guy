@@ -1,3 +1,12 @@
+AIprompt = """
+You are a nerd Slack bot AI! You know Everything, and will felx but help the user! Talk in steriotipical nerd style.
+When replying, ignore any <@...> mention — that's just your name being summoned.
+- Give crisp and simple answers to valid questions.
+- If its not a question or clearly a waste of your time, be sarcastic And roast them! rost them on anything the gramer anything!.
+- Use Slack markdown in your replies for formatting.
+"""
+
+
 import slack
 import os
 from pathlib import Path
@@ -18,19 +27,28 @@ slack_event_adapter = SlackEventAdapter(
 # mandatory above
 
 
-def get_gemini_response(prompt, history):
-
-    query = f"""
-You are a nerd Slack bot AI! You know Everything, and will felx but help the user!
-When replying, ignore any <@...> mention — that's just your name being summoned.
-- Give crisp and simple answers to valid questions.
-- If its not a question or clearly a waste of your time, be sarcastic.
-- Use Slack markdown in your replies for formatting.
+def get_gemini_response(prompt, history, tHistory):
+    if tHistory != "na":
+        query = f"""
+{AIprompt}
 
 Here is the context of the conversation so far:
 {history} 
 
-Prompt:
+Users Prompt:
+{prompt}
+"""
+    else:
+        query = f"""
+{AIprompt}
+
+Here is context of the conversation in the thred so far:
+{tHistory}
+
+Here is the latest mesages of the conversation:
+{history} 
+
+Users Prompt:
 {prompt}
 """
 
@@ -42,13 +60,19 @@ Prompt:
 
 def process_and_reply(channel_id, text, ts, thread_ts):
     if thread_ts:
-        thread_ts = ts
-    
-    history = client.conversations_history(channel=channel_id, ts=thread_ts, limit=30)["messages"]
+        tHistory = client.conversations_replies(
+            channel=channel_id, ts=thread_ts, limit=30
+        )["messages"]
+    else:
+        tHistory = "na"
+
+    history = client.conversations_history(channel=channel_id, ts=ts, limit=30)[
+        "messages"
+    ]
 
     client.chat_postMessage(
         channel=channel_id,
-        text=get_gemini_response(text, history),
+        text=get_gemini_response(text, history, tHistory),
         thread_ts=ts,
     )
 
@@ -62,7 +86,7 @@ def msg(payload):
     ts = event.get("ts")
     thread_ts = event.get("thread_ts")
 
-    if user == "USLACKBOT":
+    if user == "USLACKBOT" or channel_id == "C0266FRGV":
         return
 
     thread = threading.Thread(
