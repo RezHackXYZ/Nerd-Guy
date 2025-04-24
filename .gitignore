@@ -1,0 +1,5 @@
+# Ignore environment variables file
+.env
+
+# But don't ignore example environment variables file
+!.env example
