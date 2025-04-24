@@ -42,13 +42,11 @@ Prompt:
     ).text
 
 
-def process_and_reply(channel_id, text, ts):
-    history = client.conversations_replies(
-        channel=channel_id,
-        ts=ts,
-        limit=20,
-    )
-
+def process_and_reply(channel_id, text, ts, thread_ts):
+    if thread_ts:
+        thread_ts = ts
+    
+    history = client.conversations_history(channel=channel_id, ts=thread_ts)["messages"]
 
     client.chat_postMessage(
         channel=channel_id,
@@ -64,11 +62,14 @@ def msg(payload):
     user = event.get("user")
     text = event.get("text")
     ts = event.get("ts")
+    thread_ts = event.get("thread_ts")
 
     if user == "USLACKBOT":
         return
 
-    thread = threading.Thread(target=process_and_reply, args=(channel_id, text, ts))
+    thread = threading.Thread(
+        target=process_and_reply, args=(channel_id, text, ts, thread_ts)
+    )
     thread.start()
 
 
