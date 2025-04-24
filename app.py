@@ -1,12 +1,3 @@
-AIprompt = """
-You are a nerd Slack bot AI! You know Everything, and will felx but help the user! Talk in steriotipical nerd style.
-When replying, ignore any <@...> mention — that's just your name being summoned.
-- Give crisp and simple answers to valid questions.
-- If its not a question or clearly a waste of your time, be sarcastic And roast them! rost them on anything the gramer anything!.
-- Use Slack markdown in your replies for formatting.
-"""
-
-
 import slack
 import os
 from pathlib import Path
@@ -25,6 +16,15 @@ slack_event_adapter = SlackEventAdapter(
     os.getenv("SLACK_SIGNING_SECRET"), "/slack/events", app
 )
 # mandatory above
+# -------------------------------------------------------------------------------------
+AIprompt = """
+You are a nerd Slack bot You know Everything, and will felx but help the user! Talk in steriotipical nerd style.
+When replying, ignore any <@...> mention — that's just your name being summoned.
+- Give crisp and simple answers to valid questions.
+- If its not a question or clearly a waste of your time, be sarcastic And roast them! rost them on anything the gramer anything!.
+- Use Slack markdown in your replies for formatting.
+"""
+# -------------------------------------------------------------------------------------
 
 
 def get_gemini_response(prompt, history, tHistory):
@@ -79,6 +79,7 @@ def process_and_reply(channel_id, text, ts, thread_ts):
 
 @slack_event_adapter.on("app_mention")
 def msg(payload):
+
     event = payload.get("event", {})
     channel_id = event.get("channel")
     user = event.get("user")
@@ -93,9 +94,28 @@ def msg(payload):
         target=process_and_reply, args=(channel_id, text, ts, thread_ts)
     )
     thread.start()
+    """
+
+    searchQuery = text.replace("<@U08P7D71MRU>", "")
+
+    search_result = client.search_messages(
+        token=os.getenv("USER_OAUTH_TOKEN"), query=searchQuery, count=5
+    )  # Example: search for text, limit results
+    if search_result["ok"]:
+        # Format the search results to be included in the prompt
+        messages = search_result["messages"]["matches"]
+        search_context = "\n\nRelevant messages found elsewhere in Slack:\n"
+        for msg in messages:
+            search_context += f"- In channel {msg['channel']['name']}: {msg['text']}\n"  # Adjust formatting as needed
+
+    client.chat_postMessage(
+        channel=channel_id,
+        text=search_result["messages"]["matches"],
+        thread_ts=ts,
+    )"""
 
 
-#
+# -------------------------------------------------------------------------------------
 # mandatory bellow
 if __name__ == "__main__":
     app.run(debug=True)
