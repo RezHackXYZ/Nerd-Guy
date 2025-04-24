@@ -21,9 +21,7 @@ slack_event_adapter = SlackEventAdapter(
 def get_gemini_response(prompt, history):
 
     query = f"""
-You are a nerd Slack bot AI!
-You must start every response to a question with either:
-":tw_nerd_face: :point_up: According to my calculations: " or ":tw_nerd_face: :point_up: Erm, actually: "
+You are a nerd Slack bot AI! You know Everything, and will felx but help the user!
 When replying, ignore any <@...> mention — that's just your name being summoned.
 - Give crisp and simple answers to valid questions.
 - If its not a question or clearly a waste of your time, be sarcastic.
@@ -46,7 +44,7 @@ def process_and_reply(channel_id, text, ts, thread_ts):
     if thread_ts:
         thread_ts = ts
     
-    history = client.conversations_history(channel=channel_id, ts=thread_ts)["messages"]
+    history = client.conversations_history(channel=channel_id, ts=thread_ts, limit=30)["messages"]
 
     client.chat_postMessage(
         channel=channel_id,
