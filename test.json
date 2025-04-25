@@ -1,0 +1,72 @@
+[
+    {
+        "channel": "announcements",
+        "text": "I made a friend, and they want to teach you about something. :ms_grinning:\n\nJekyll is a tool that allows you to build a website: put just a little bit of code in, get a beautiful site out. All you need to do is pick a theme to decide how it looks.\nThere are lots of Jekyll themes out there, but we don't just want you to pick an existing one - we want to teach you how to build your own.\nI'm absolutely thrilled to announce Tonic, a You Ship, We Ship about building Jekyll themes. :test_tube:\n\nBuilding a theme is hard, but Tonic is designed to make it easy. Inside, you'll meet Mutant, a little smiley who's ready to guide you from start to finish with a list of bite-sized tasks. By the time you're finished, you'll have made a beautiful Jekyll theme and published it for the world to see. :ms_starry_eyes:\nIf you've already made a website with Boba Drops :boba-drops: or Swirl :swirl:, this is the perfect YSWS for you, as creating a theme will present new challenges and get you to use different tools.\n\nBut what else is in it for you?\n:billed_cap: If you publish a theme with Tonic, we'll send you a Hack Club hat (example pictured). We've never made these on a large scale before - only <@U041FQB8VK2|Thomas>, <@U0261EB1EG7|Deven> and I are known to have anything like it.\n:tw_question: If you publish something really awesome, we have something to invite you to. Tonic is designed to teach you the basics, but we want to encourage you to go further. If you add :five: features to your theme that Tonic doesn't explicitly teach you about, you'll get an invite to an AMA with Tom Preston-Werner, the creator of Jekyll and founder of GitHub.\n\nTonic launches now with a list of 8 tasks, and more tasks will become available in 72 hours.\nGet started at <https://tonic.hackclub.com>. :white_heart:",
+        "user": "U01G0Q9K998",
+        "username": "sporeballdev",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1745517736774749?thread_ts=1745517736.774749"
+    },
+    {
+        "channel": "announcements",
+        "text": "<https://hackclub.slack.com/archives/C03QSGGCJN7/p1710903183879469|A year ago>, I had the crazy idea to run a hackathon on an island in the Boston Harbor. Today, we made it happen.\n\nYes, Hack Club is renting a private island.\nYes, we're running a hackathon on it.\n\nIntroducing....\nShipwrecked :shipwrecked:, a Hack Club hackathon on an island!\n\nOn August 8-11, you :index_pointing_at_the_viewer: and 130 other Hack Clubbers will gather on Cathleen Stone Island in the Massachusetts Bay for a once in a lifetime, 4-day story-based hackathon! As soon as you get there, you'll all start working together to survive!\n\nTo get invited, you'll complete...\n\nThe Bay:\n\u2022 Spend a total of 60 hours making 4 projects (~ 15 hours each) that you are really proud of. \n\u2022 Share them with the rest of the world and make at <http://shipwrecked.hackclub.com/info/go-viral|least one go viral>! We\u2019ll help you get there with workshops, online events, and more.\n\u2022 Get invited to Shipwrecked! (Travel stipends available, <https://shipwrecked.hackclub.com/info/travel-stipends|more information here>) \n\n\nTL;DR:\n1. :blobby-hammer_and_wrench: Build 4 projects in The Bay and make them go viral - spend 60 hours making projects and you'll get an invite to...\n2. :desert_island: Go to <#C08N0R86DMJ> on August 8-11 - a hackathon on an island in the Boston Harbor!\n\n\nShipwrecked will start when we hit 5000 signups. Join now and learn more at <http://shipwrecked.hackclub.com|shipwrecked.hackclub.com> \n\nPS: Join <#C08N0R86DMJ> to meet other hackers!",
+        "user": "U05D1G4H754",
+        "username": "evanmgan",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1745379004748499?thread_ts=1745379004.748499"
+    },
+    {
+        "channel": "announcements",
+        "text": "want to start doing hardware? never made a pcb before? don't know where to start?\n\n:blobcat_party: <#C08L288G22Y> LAUNCHES NOW!! :blobcat_party:\n\nhere's how it works:\n1. design a pcb with the basic list of components we give you!\n2. ship your design in <#C08N2CN8E2C> \n3. receive your kit of components \n4. solder your board together! \n\nneed inspo? \n\u2022 <@U07EQJY9YDD|Cyao> (who i'm running solder with!!) made this amazing <https://github.com/cheyao/Open555|555 ic with just transistors>! \n\u2022 <@U0747GRE669|sunni> made a <https://github.com/carrotsoups/garypcb-juice|gary snail fidget toy> that vibrates when a button is pressed \n\u2022 <@U08286A6HE1|Mejpek> made a <https://github.com/WiktorKociuba/Boykisser-PCB|boykisser keychain> that lights up in the dark\n\nalso, club leaders who run a solder workshop get a special reward :eyes_shaking:\n\n:tw_bangbang: <http://solder.hackclub.com|solder.hackclub.com> to get started :soldering-iron::neocat_kirby_succ::tw_bangbang:",
+        "user": "U04KEK4TS72",
+        "username": "scylrz",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1745344326810929?thread_ts=1745344326.810929"
+    },
+    {
+        "channel": "announcements",
+        "text": "hey\n\nin case you didn't know, i built <http://ai.hackclub.com|ai.hackclub.com> to give your projects sota llm api access for free. <http://github.com/hackclub/ai|it's open source.>\nit's processing nearly a million tokens per day rn.\n\n:cat-woah: (no auth token required, and you can use it directly from your frontend (no...cors...for concern))\n```curl -X POST <https://ai.hackclub.com/chat/completions> \\\n    -H \"Content-Type: application/json\" \\\n    -d '{\n        \"messages\": [{\"role\": \"user\", \"content\": \"Tell me a joke!\"}]\n    }'```",
+        "user": "U03DFNYGPCN",
+        "username": "malted",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1745284480128109?thread_ts=1745284480.128109"
+    },
+    {
+        "channel": "announcements",
+        "text": "Heidi swallows and turns to Orpheus. \n\"I've had my boba and you've had your ice cream, but I feel like there's an important part of web dev that we haven't learned.\"\n\"I know!\" says Orpheus. \"I think it's called... JavaScript?!\"\n\nHi, I'm PianoMan0! I'm so excited to announce Hacklet, a bookmarklet YSWS! Spend two hours building a bookmarklet (see the website below to find out what that is), and we'll give you $10 to buy a domain! What's that? Stickers too by the one, the only, <@U07AZFQLPQ8|KittyCat>?\nThis will run for 3 weeks, so you have plenty of time to make your best project. And with this YSWS, we want to see you be creative! With two hours, you can make a useful tool and refine it. Don't know what to make? Message me in <#C08PJMATU8Y>!\nAnd to make sure you're playing the game, the best submissions get an exclusive Hack Club bookmark :agadance:...\nI heard that if you react with :hacklet: you'll have good luck!\n\nCheck out our website: <https://hackclub.github.io/hacklet/> (domain name will change soon)",
+        "user": "U0829HRSQ76",
+        "username": "pianoman0_",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1745093855547519?thread_ts=1745093855.547519"
+    },
+    {
+        "channel": "announcements",
+        "text": "If you're interested in AI safety, join us for an AMA with Arthur Conmy on April 18th at 6 PM PST! :wave-club-penguin:\n\nArthur is a leading researcher in mechanistic interpretability (a.k.a. Neuroscience for LLMs :brain:) at Google DeepMind, where he works on understanding how LLMs process information internally. His work seeks to make AI systems more transparent and aligned with human values.\nHere\u2019s some of the awesome work Arthur has done!\n\u2022 He co-led the development of Gemma Scope :microscope:, a comprehensive suite of over 400 sparse autoencoders (SAEs) trained across all layers of Google's Gemma 2 models. <https://www.neuronpedia.org/gemma-scope#main|Check out an interactive demo>!\n\u2022 He also pioneered <https://arxiv.org/abs/2304.14997|automated circuit discovery> :pcb: in LLMs and investigated indirect object detection, successor heads, and much more with 1,300+ citations!\n\nWhether you're new to AI, not sure what mechanistic interpretability is, or just want to chat with a brilliant researcher working at Google DeepMind and the University of Cambridge - you won\u2019t want to miss this!\n\nIf you\u2019d like to attend, react to this message with :+1: to RSVP! Looking forward to seeing y'all!!! :wave-pikachu-2:",
+        "user": "U017JRCBSFQ",
+        "username": "kevinlu.email",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1744834291624119?thread_ts=1744834291.624119"
+    },
+    {
+        "channel": "announcements",
+        "text": "A wise person once said: \"It's about the journey, not the destination\" :world_map:\n\nWhat a clich\u00e9. But also, like, it's true\u2014and it's especially true for hackers. I love the journey of building things, I love sharing my journeys, and I love seeing the journeys that other hackers share. So today we're launching signups for a ten-day event that's all about those journeys. Here's how it works:\n\n1. <https://journey.hackclub.com|Sign in> and create a project to work on for the next week :workworkwork:\n2. Share updates on your project as you work (we recommend 1+ per day) :camera_with_flash: \n3. At the end of the event, everybody votes to select the best journeys :white_check_mark:\n\nWe want to see text, images, and videos that tell the story of whatever it is you're building (you could even use <#C08MC7PQ40G> to make a timelapse if you're feeling spicy :eyes:). TBH it's a lot like Scrapbook, except you post your updates in <#C08MTLF071T>. Your project could be something new, it could be something you've worked on for years. Could be a solo or a group project. The only rule is that you need to ship something by the end; a demo video, a deployed website, a song, anything that lets the rest of us experience your project (without downloading or installing anything).\n\nWe'll be using head-to-head matchups like in High Seas to find the crowd-favorite hacker journeys. Everyone who ships a project with ten or more updates spread across five or more days will get at least a $15 Amazon credit\u2014but the higher you rank, the more you will earn, so make sure to tell a good story!\n\nAlright, that's it. Go forth, <https://journey.hackclub.com|sign in>, and create your project now to reserve your spot. The Journey begins on Tuesday, April 15th",
+        "user": "UDK5M9Y13",
+        "username": "cwalker",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1744476779404909?thread_ts=1744476779.404909"
+    },
+    {
+        "channel": "announcements",
+        "text": "the thing is-\n\n1. everyone hacks on the same pcb, one after the other.\n2. each person gets 2 days to add a thing, and streams all their work in <#C08MFTG96BH>.\n3. get your place in the queue at <http://thing.hackclub.com|thing.hackclub.com>\n\nyou should sign up even if you're not confident with PCBs - this was my first one and people in the huddle helped me out sm!!",
+        "user": "U03DFNYGPCN",
+        "username": "malted",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1744425136236859?thread_ts=1744425136.236859"
+    },
+    {
+        "channel": "announcements",
+        "text": "wanna send somebody from slack a postcard?\ndon't have their address? boy, have i got the thing for you\n<#C08NCT0J49W> <http://hcpcxc.hackclub.com|hcpcxc.hackclub.com>",
+        "user": "U06QK6AG3RD",
+        "username": "nora",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1744331723996709?thread_ts=1744331723.996709"
+    },
+    {
+        "channel": "announcements",
+        "text": ":wave: Ciao everyone, I'm Cyao!\n\nHave you ever wanted to join <#C07NQ5QAYNQ> make a :mc_loading: Minecraft mod, but didn't have the time? Yes? Now's your opportunity! Join <#C07NQ5QAYNQ> v2, a YSWS where you build your own Minecraft mod and get the game to play it with friends! :mc_soulfire: (You can also choose server credits! :mc_fox_spin:)\n\nHere's how it works:\n\n:crafting_table: Hack together awesome mod in your IDE of choice\n:mc-clock: Log at least 8 hours on <https://hackatime.hackclub.com/|hackatime.hackclub.com>\n:mc_piston: Push your mod to the world to see on <https://modrinth.com/|Modrinth>\n:mc_diamond: Submit your mod on <https://hackcraft.hackclub.com/|hackcraft.hackclub.com>\n\nReady to make your dreams true?\n\n:diamond_pickaxe: Share progress and get help in <#C07NQ5QAYNQ>!! :ender_halloween:\n\nPS. You don't need a Minecraft account to make a mod! :yay:",
+        "user": "U07EQJY9YDD",
+        "username": "cyao",
+        "permalink": "https://hackclub.slack.com/archives/C0266FRGT/p1743855944334619?thread_ts=1743855944.334619"
+    }
+]
