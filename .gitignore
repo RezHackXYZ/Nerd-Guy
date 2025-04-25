@@ -1,5 +1,7 @@
 # Ignore environment variables file
 .env
 .venv
+**/__pycache__/
+
 # But don't ignore example environment variables file
 !.env.example
