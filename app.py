@@ -28,7 +28,7 @@ def msg(payload):
     thread_ts = event.get("thread_ts")
 
     thread = threading.Thread(
-        target=FindWhatType, args=(text, channel_id, ts, thread_ts,user)
+        target=FindWhatType, args=(text, channel_id, ts, thread_ts, user)
     )
     thread.start()
 

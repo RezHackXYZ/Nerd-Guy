@@ -30,9 +30,13 @@ def send_message(channel_id, text, ts):
 
 
 def get_history(channel_id, limit, ts):
-    if ts:
+    if ts =="na":
         return client.conversations_history(channel=channel_id, ts=ts)[
             "messages"
         ]
-    elif not ts:
+    else:
         return client.conversations_history(channel=channel_id, limit=limit)["messages"]
+
+def search():
+    return "abc"
+    #TODO - ahh 

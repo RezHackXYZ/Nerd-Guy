@@ -31,7 +31,7 @@ Instruction/Behavior:
 {prompt}
 
 Context of the conversation so far In the channel so far:
-{get_history(channel_id, contextAmount)}
+{get_history(channel_id, contextAmount, "na")}
 
 User Query:
 {text}
@@ -56,7 +56,7 @@ Context of the conversation so far In the thread so far:
 {get_history(channel_id,"", thread_ts)}
 
 Context of the conversation so far In the channel so far:
-{get_history(channel_id, contextAmount)}
+{get_history(channel_id, contextAmount, "na")}
 
 User Query:
 {text}
