@@ -1,26 +1,30 @@
 from modules.Real_function_Exicution import send_message, aiprompt
 from modules.none import none
+from modules.context import context
+
 
 def FindWhatType(text, channel_id, ts, thread_ts, user):
     if user == "USLACKBOT":
         return
 
+    if not thread_ts:
+        thread_ts = ts
+        noThread = True
+
     elif text.replace("<@U08P7D71MRU> ", "") == "ping":
-        send_message(channel_id, "🏓 PONG! 🏓", ts)
+        send_message(channel_id, "🏓 PONG! 🏓", thread_ts)
     else:
-        Type = FindType(text)
+        Type = aiprompt(query.replace("{query}", text), "gemma-3-4b-it")
         send_message(
             channel_id,
             f"Type: {Type}",
-            ts,
+            thread_ts,
         )
 
         if "none" in Type:
-            none(text, channel_id, ts)
-
-
-def FindType(text):
-    return aiprompt(query.replace("{query}", text), "gemma-3-4b-it")
+            none(text, channel_id, thread_ts)
+        elif "context" in Type:
+            context(text, channel_id, ts, noThread)
 
 
 query = """
