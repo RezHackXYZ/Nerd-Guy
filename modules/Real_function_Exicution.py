@@ -12,7 +12,6 @@ client = slack.WebClient(token=os.getenv("SLACK_OAUTH_TOKEN"))
 # --------------------------------------------------------------------------------------------
 
 
-# To get the AI msgs
 def aiprompt(query, model="gemini-2.0-flash"):
     return aiclient.models.generate_content(
         model=model,
@@ -20,7 +19,16 @@ def aiprompt(query, model="gemini-2.0-flash"):
     ).text
 
 
-# for sending msgs
+def get_history(channel_id, limit, ts):
+    if ts == "na":
+        return client.conversations_history(
+            channel=channel_id, limit=limit
+        )["messages"]
+    else:
+        return client.conversations_history(
+                channel=channel_id, ts=ts
+            )["messages"]
+
 def send_message(channel_id, text, ts):
     client.chat_postMessage(
         channel=channel_id,
@@ -29,14 +37,16 @@ def send_message(channel_id, text, ts):
     )
 
 
-def get_history(channel_id, limit, ts):
-    if ts =="na":
-        return client.conversations_history(channel=channel_id, ts=ts)[
-            "messages"
-        ]
-    else:
-        return client.conversations_history(channel=channel_id, limit=limit)["messages"]
+def AddEmoji(channel_id, ts, emoji):
+    client.reactions_add(
+        channel=channel_id,
+        name=emoji,
+        timestamp=ts,
+    )
 
-def search():
-    return "abc"
-    #TODO - ahh 
+def RemoveEmoji(channel_id, ts, emoji):
+    client.reactions_remove(
+        channel=channel_id,
+        name=emoji,
+        timestamp=ts,
+    )

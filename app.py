@@ -15,7 +15,7 @@ slack_event_adapter = SlackEventAdapter(
     os.getenv("SLACK_SIGNING_SECRET"), "/slack/events", app
 )
 
-from modules.Route_to_witch_function_check import FindWhatType
+from modules.start import stage1
 
 
 @slack_event_adapter.on("app_mention")
@@ -28,7 +28,7 @@ def msg(payload):
     thread_ts = event.get("thread_ts")
 
     thread = threading.Thread(
-        target=FindWhatType, args=(text, channel_id, ts, thread_ts, user)
+        target=stage1, args=(text, channel_id, ts, thread_ts, user)
     )
     thread.start()
 

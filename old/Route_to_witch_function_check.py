@@ -1,6 +1,6 @@
 from modules.Real_function_Exicution import send_message, aiprompt
-from modules.none import none
-from modules.context import context
+from old.none import none
+from old.context import context
 
 
 def FindWhatType(text, channel_id, ts, thread_ts, user):
@@ -10,7 +10,6 @@ def FindWhatType(text, channel_id, ts, thread_ts, user):
     if not thread_ts:
         thread_ts = ts
         noThread = True
-
 
     if text.replace("<@U08P7D71MRU> ", "") == "ping":
         send_message(channel_id, "🏓 PONG! 🏓", thread_ts)
@@ -28,8 +27,7 @@ def FindWhatType(text, channel_id, ts, thread_ts, user):
             context(text, channel_id, ts, noThread)
         elif "search" in Type:
             print("idk what to do")
-            #TODO - ahh 
-
+            # TODO: implement search function 
 
 query = """
 You are a Slack bot. You are given a query and need to classify it into one of the following categories:
