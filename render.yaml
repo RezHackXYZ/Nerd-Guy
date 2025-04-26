@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: slack-rezda-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    plan: free
+    envVars:
+      - key: SLACK_OAUTH_TOKEN
+        sync: false
+      - key: SLACK_SIGNING_SECRET
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: USER_OAUTH_TOKEN
+        sync: false
+      - key: PYTHONUNBUFFERED
+        value: true
+    autoDeploy: true
