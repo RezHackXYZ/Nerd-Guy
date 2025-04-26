@@ -6,6 +6,7 @@ from modules.Real_function_Exicution import (
     get_history,
 )
 from modules.UnknownTermFinder import FindTerms
+from modules.search import DoSearch
 import json
 import random
 
@@ -26,7 +27,7 @@ def stage1(text, channel_id, ts, thread_ts, user):
         AddEmoji(channel_id, ts, thinkEmoji)
 
         terms = FindTerms(text)
-        search = "none"
+        search = DoSearch(text)
         contextNeeded = aiprompt(
             f"""
 For the give query, catogrize it into 

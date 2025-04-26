@@ -21,13 +21,10 @@ def aiprompt(query, model="gemini-2.0-flash"):
 
 def get_history(channel_id, limit, ts):
     if ts == "na":
-        return client.conversations_history(
-            channel=channel_id, limit=limit
-        )["messages"]
+        return client.conversations_history(channel=channel_id, limit=limit)["messages"]
     else:
-        return client.conversations_history(
-                channel=channel_id, ts=ts
-            )["messages"]
+        return client.conversations_history(channel=channel_id, ts=ts)["messages"]
+
 
 def send_message(channel_id, text, ts):
     client.chat_postMessage(
@@ -44,9 +41,35 @@ def AddEmoji(channel_id, ts, emoji):
         timestamp=ts,
     )
 
+
 def RemoveEmoji(channel_id, ts, emoji):
     client.reactions_remove(
         channel=channel_id,
         name=emoji,
         timestamp=ts,
     )
+
+
+def search(sort="score", searchQuery="", count=10):
+    search_result = client.search_messages(
+        token=os.getenv("USER_OAUTH_TOKEN"),
+        query=searchQuery,
+        count=count,
+        sort=sort,
+    )
+
+    messages = search_result["messages"]["matches"]
+
+    formatted_results = []
+    for msg in messages:
+        formatted_results.append(
+            {
+                "channel": msg["channel"]["name"],
+                "text": msg["text"],
+                "user": msg.get("user", "unknown"),
+                "username": msg.get("username", "unknown"),
+                "permalink": msg.get("permalink", "unknown"),
+            }
+        )
+
+    return formatted_results
